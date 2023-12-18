@@ -5,6 +5,7 @@ from django.http.response import JsonResponse
 from posts.models import Limiter
 from django.utils import timezone
 from functools import wraps
+import requests
 
 sms = ghasedakpack.Ghasedak(settings.SMS_APIKEY)
 
@@ -25,8 +26,17 @@ def jalali_converter(time):
 
 
 def send_sms(**kwargs):
-    res = sms.verification({**kwargs})
-    if res == False:
+
+    headers = {
+        'Accept': "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
+        'charset': "utf-8",
+        'apikey': sms
+    }
+
+    url = 'https://api.ghasedak.io/v2/verification/send/simple'
+    r = requests.post(url, headers=headers, data=kwargs)
+    if r.status_code != 200:
         return JsonResponse({}, status=500)
     
 

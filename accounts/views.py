@@ -241,8 +241,8 @@ def request_otp(request):
                 return JsonResponse({'ttl': ttl}, status=226)
 
         otp = _generate_otp()
-        print(otp)
-        # send_sms(receptor=phone, template='huzan', type=1, param1=otp)
+        # print(otp)
+        send_sms(receptor=phone, template='huzan', type=1, param1=otp)
         user.set_password(otp)
         user.save()
         return JsonResponse({'msg': 'کد ارسال شده را وارد نمایید', 'ttl': 45}, status=200)

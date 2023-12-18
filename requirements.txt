@@ -6,7 +6,6 @@ django-admin-interface
 django-colorfield
 django-js-asset
 django-mptt
-ghasedakpack
 idna
 Pillow
 python-slugify
