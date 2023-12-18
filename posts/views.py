@@ -3,9 +3,9 @@ from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from django.urls import reverse_lazy
 from django.db.models import Q, Count, Prefetch, F
-from django.contrib.postgres.search import SearchVector
+# from django.contrib.postgres.search import SearchVector
 from django.views import View
-from django.views.decorators.http import require_GET, require_POST
+from django.views.decorators.http import require_GET
 from django.views.decorators.clickjacking import xframe_options_deny
 import json
 

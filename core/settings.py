@@ -21,8 +21,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'django.contrib.sitemaps',
-    'django.contrib.postgres',
+    # 'django.contrib.sitemaps',
+    # 'django.contrib.postgres',
     
     'mptt', 
     'posts', 'accounts',
