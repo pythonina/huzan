@@ -1,13 +1,12 @@
 from . import jalali
 from django.conf import settings
-import ghasedakpack
 from django.http.response import JsonResponse
 from posts.models import Limiter
 from django.utils import timezone
 from functools import wraps
 import requests
 
-sms = ghasedakpack.Ghasedak(settings.SMS_APIKEY)
+SMS_APIKEY = settings.SMS_APIKEY
 
 def jalali_converter(time):
     jmonths = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند']
@@ -31,7 +30,7 @@ def send_sms(**kwargs):
         'Accept': "application/json",
         "Content-Type": "application/x-www-form-urlencoded",
         'charset': "utf-8",
-        'apikey': sms
+        'apikey': SMS_APIKEY
     }
 
     url = 'https://api.ghasedak.io/v2/verification/send/simple'
