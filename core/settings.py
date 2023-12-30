@@ -3,7 +3,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-%y+l)065-n7&q6hnt34#_dvxg00etwt*%5lrpzr*x=0)--8-i#'
+SECRET_KEY = os.env.get('secret_key')
 
 DEBUG = True
 
@@ -135,4 +135,4 @@ LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/'
 
 
-SMS_APIKEY = '166b6118a3111d27e49df0901b9b6c6e1af6497189388c16f762c2fb5765411f'
+SMS_APIKEY = os.env.get('sms_key')
