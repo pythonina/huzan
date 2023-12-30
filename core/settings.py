@@ -7,8 +7,8 @@ SECRET_KEY = 'django-insecure-%y+l)065-n7&q6hnt34#_dvxg00etwt*%5lrpzr*x=0)--8-i#
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'huzan.runflare.run', 'www.huzan.runflare.run']
-CSRF_TRUSTED_ORIGINS = ['https://huzan.runflare.run', 'https://www.huzan.runflare.run']
+ALLOWED_HOSTS = ['huzanshop.ir', 'www.huzanshop.ir']
+CSRF_TRUSTED_ORIGINS = ['https://huzanshop.ir', 'https://www.huzanshop.ir']
 
 
 INSTALLED_APPS = [
