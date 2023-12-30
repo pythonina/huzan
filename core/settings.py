@@ -3,7 +3,7 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.env.get('secret_key')
+SECRET_KEY = os.environ.get('secret_key')
 
 DEBUG = True
 
@@ -135,4 +135,4 @@ LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/'
 
 
-SMS_APIKEY = os.env.get('sms_key')
+SMS_APIKEY = os.environ.get('sms_key')
